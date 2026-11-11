@@ -1,4 +1,13 @@
+
 node_modules
 .next
 next-env.d.ts
 .env*.local
+
+# GitHub Pages static export
+out/
+
+# Environment files
+.env
+.env.*
+!.env.example

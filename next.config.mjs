@@ -1,18 +1,26 @@
+
 /** @type {import('next').NextConfig} */
+
+const isProduction = process.env.NODE_ENV === "production";
+
 const nextConfig = {
   reactStrictMode: true,
-  poweredByHeader: false,
-  async headers() {
-    return [{
-      source: "/(.*)",
-      headers: [
-        { key: "X-Content-Type-Options", value: "nosniff" },
-        { key: "X-Frame-Options", value: "SAMEORIGIN" },
-        { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-        { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
-        { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
-      ],
-    }];
+
+  // Generate a static website
+  output: "export",
+
+  // Required for GitHub Pages
+  ...(isProduction && {
+    basePath: "/rulingmind-technologies",
+  }),
+
+  // GitHub Pages does not support Next.js image optimization
+  images: {
+    unoptimized: true,
   },
+
+  // Generate URLs ending with /
+  trailingSlash: true,
 };
+
 export default nextConfig;
