@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .wrap { @apply mx-auto w-[min(1160px,calc(100%-32px))] sm:w-[min(1160px,calc(100%-40px))]; }
+  .eyebrow { @apply text-[11px] font-extrabold uppercase tracking-[2px] text-brand; }
+  .btn { @apply inline-block rounded-sm bg-brand px-[19px] py-[13px] font-bold text-white; }
+  .btn-outline { @apply inline-block border border-white/50 px-[18px] py-3 text-[13px] font-bold text-white; }
+  .block { @apply py-[65px] md:py-[90px]; }
+  .h1 { @apply my-5 font-display text-[clamp(42px,5vw,65px)] font-bold leading-[1.06] tracking-[-2px] md:tracking-[-3px]; }
+  .h2 { @apply my-3.5 font-display text-[clamp(31px,4vw,48px)] font-bold leading-[1.12] tracking-[-1.5px]; }
+  .split { @apply grid items-center gap-10 md:grid-cols-2 md:gap-[60px]; }
+  .more { @apply mt-3 inline-block text-[13px] font-extrabold text-brand; }
+}

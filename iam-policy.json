@@ -1,0 +1,8 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    { "Effect": "Allow", "Action": ["dynamodb:PutItem"],
+      "Resource": "arn:aws:dynamodb:ap-south-1:<ACCOUNT_ID>:table/rm-contact-enquiries" },
+    { "Effect": "Allow", "Action": ["ses:SendEmail"], "Resource": "*" }
+  ]
+}
